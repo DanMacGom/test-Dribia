@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Redirect } from "react-router-dom";
 
-const checkUrl = "http://localhost:3001";
+const checkUrl = "";
 
 export const LoginForm = ({ username, setUsername, password, setPassword }) => {
   const [submitted, setSubmitted] = useState(false);

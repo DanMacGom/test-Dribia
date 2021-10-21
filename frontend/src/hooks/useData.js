@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const userUrl = "http://localhost:3001/users";
+const userUrl = "/users";
 
 export const useData = () => {
   const [userData, setUserData] = useState([]);
