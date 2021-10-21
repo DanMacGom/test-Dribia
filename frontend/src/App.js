@@ -2,7 +2,8 @@ import { UserList } from "./components/UserList";
 import { LoginForm } from "./components/LoginForm";
 
 import { useState } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Link, BrowserRouter, Route, Switch } from "react-router-dom";
+import { LoginButton } from "./components/LoginButton";
 
 const App = () => {
   const [username, setUsername] = useState("");
@@ -21,6 +22,9 @@ const App = () => {
         </Route>
         <Route exact path="/users">
           <UserList />
+          <Link to="/">
+            <LoginButton />
+          </Link>
         </Route>
       </Switch>
     </BrowserRouter>

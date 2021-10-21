@@ -2,7 +2,8 @@ from fastapi import APIRouter, status, Form
 from fastapi.encoders import jsonable_encoder
 from fastapi.responses import JSONResponse
 
-from .users import User
+from ..models.users import User
+from .users import create_user
 
 from ..db.connect import db
 
@@ -19,4 +20,6 @@ async def check_login(username: str = Form(...), password: str = Form(...)):
     if user_in_db is not None:
         return JSONResponse(content=user_in_db, status_code=status.HTTP_200_OK)
     else:
-        return JSONResponse(content={"message": "User not found"}, status_code=status.HTTP_404_NOT_FOUND)
+        new_user = User(username=username, password=password)
+        create_user_response = await create_user(new_user)
+        return create_user_response

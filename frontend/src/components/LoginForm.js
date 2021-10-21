@@ -27,7 +27,7 @@ export const LoginForm = ({ username, setUsername, password, setPassword }) => {
         "&grant_type=password",
     });
 
-    if (check.status === 200) {
+    if (check.status === 200 || check.status === 201) {
       setSubmitted(true);
       setUsername(username);
     }
@@ -52,7 +52,7 @@ export const LoginForm = ({ username, setUsername, password, setPassword }) => {
       <input type="password" onChange={(e) => setPassword(e.target.value)} />
       <br />
       <br />
-      <input type="submit" value="Submit"></input>
+      <input name="login" type="submit" value="Login"></input>
     </form>
   );
 };
