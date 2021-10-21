@@ -4,7 +4,7 @@ from fastapi.responses import JSONResponse
 
 from typing import List
 
-from ..models.users import User
+from ..models.user import User
 from ..db.connect import db
 
 users_router = APIRouter()

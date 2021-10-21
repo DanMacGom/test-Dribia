@@ -38,10 +38,13 @@ Navigate to frontend folder and execute:
 
 `$ npm start`
 
+You can test endpoints by using Swagger UI (for example: http://localhost:3001/docs) or using Postman.
+
 # TODO
 
 - Create Chatroom backend logic
 - Create Frontend for Chatroom creation
 - Take a look at python-socketio https://github.com/miguelgrinberg/python-socketio
 - Implement socketio for multiple browser chatroom
+- Add schemas to mongoDB to ensure uniqueness of usernames, chatroom names, etc.
 - ...

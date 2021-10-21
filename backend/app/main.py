@@ -1,5 +1,6 @@
 from .routes.users import users_router
 from .routes.login import login_router
+from .routes.chatrooms import chatroom_router
 import os
 
 from fastapi import FastAPI
@@ -29,3 +30,4 @@ app.add_middleware(
 
 app.include_router(router=login_router)
 app.include_router(router=users_router, prefix="/users")
+app.include_router(router=chatroom_router, prefix="/chatroom")

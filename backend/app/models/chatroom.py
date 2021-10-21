@@ -9,14 +9,14 @@ class Chatroom(BaseModel):
     """Chatroom class."""
     chatroom_name: str = Field(...)
     messages: List[Message]
-    username: str = Field(..., min_length=2, max_length=50)
-    password: str = Field(..., min_length=2, max_length=50)
-    creation_date: datetime = datetime.now()
+    created_by: str = Field(...)
+    date_created: datetime = datetime.now()
 
     class Config:
         schema_extra = {
             "example": {
-                "username": "Batman",
-                "password": "DCrules"
+                "chatroom_name": "Rockers",
+                "messages": [],
+                "created_by": "Axl Rose"
             }
         }

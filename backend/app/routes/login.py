@@ -2,7 +2,7 @@ from fastapi import APIRouter, status, Form
 from fastapi.encoders import jsonable_encoder
 from fastapi.responses import JSONResponse
 
-from ..models.users import User
+from ..models.user import User
 from .users import create_user
 
 from ..db.connect import db
